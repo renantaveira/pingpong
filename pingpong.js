@@ -20,14 +20,39 @@
  let meusPontos = 0;
  let pontosOponente = 0;
 
-function setup() {
+ // Dificuldade
+ let dificuldade = "Normal";
+ let trilha,ponto,raquetada;
+
+ function preload(){
+  trilha = loadSound("trilha.mp3")
+  ponto = loadSound("ponto.mp3")
+  raquetada = loadSound("raquetada.mp3")
+ }
+
+ function setup() {
   createCanvas(600, 400);
+  trilha.loop()
 }
 
 function draw(){
-  
+  background(0);
+  movimentoBolinha();
+  raquetes(xRaquete,yRaquete)
+  raquetes(xRaqueteOponente,yRaqueteOponente)
+  npc(dificuldade)
 }
 
+if(keyIsDown(UP_ARROW)){
+  yRaquete -= 10}
+ 
+if(keyIsDown(DOWN_ARROW)){
+  yRaquete += 10}
+ 
+if(xBolinha - raio < xRaquete + 10 & yBolinha - raio < yRaquete + 90 & yBolinha + raio > yRaquete){
+  velocidadeXBolinha *= -1;
+  raquetada.play()}
+  
 function movimentoBolinha(){
   circle(xBolinha,yBolinha,diametro);
   
