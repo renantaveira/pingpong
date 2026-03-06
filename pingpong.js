@@ -56,7 +56,7 @@ function draw(){
     raquetada.play()}
   if(xBolinha + raio > xRaqueteOponente &
      yBolinha - raio< yRaqueteOponente + 90 &
-     ybolinha + raio > yRaqueteOponente ){
+     yBolinha + raio > yRaqueteOponente ){
     velocidadeXBolinha *= -1;
     raquetada.play()}
  
@@ -107,3 +107,4 @@ function npc(){
   let velocidadeYRaqueteOponente = yBolinha - yRaqueteOponente - 10/2;
   yRaqueteOponente += velocidadeYRaqueteOponente - nivel;
 }
+  
